@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>event</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+     <nav>
+        <a href="index.html">beranda</a>
+        <a href="produk.html">produk</a>
+        <a href="bedah-buku.html">bedah buku</a>
+        <a href="testimoni.html">testimoni</a>
+        <a href="tampil-testimoni.html">testimoni pembeli</a>
+        <a href="kontak.html">kontak</a>
+        <a href="event.html">event</a>
+    </nav>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <h1>🎉 FESTIVAL LITERASI 2026 🎉</h1>
+    <p>Toko Buku Adinda Putri Menghadirkan Event Spesial Untuk Anda!</p>
+    <div class="countdown" id="countdown"></div>
+</header>
+
+<div class="owner-message">
+    <h2>📖 Sapaan dari Owner</h2>
+    <p>Halo Sahabat Literasi! 👋</p>
+    <p>
+        Saya, <strong>Adinda Putri</strong>, owner Toko Buku Adinda Putri,
+        mengundang Anda untuk meramaikan Festival Literasi 2026.
+        Mari bersama menumbuhkan budaya membaca!
+    </p>
+    <p><em>"Membaca adalah jendela dunia."</em></p>
+</div>
+
+<div class="container">
+
+<div class="events">
+    <div class="event-card">
+        <h3>📚 Bedah Buku & Meet Author</h3>
+        <p>15 April 2026 | 14.00 WIB</p>
+    </div>
+
+    <div class="event-card">
+        <h3>🎤 Talkshow Inspiratif</h3>
+        <p>18 April 2026 | 13.00 WIB</p>
+    </div>
+
+    <div class="event-card">
+        <h3>👧 Lomba Membaca Anak</h3>
+        <p>20 April 2026 | 10.00 WIB</p>
+    </div>
+
+    <div class="event-card">
+        <h3>🔥 Diskon Spesial Hari Buku</h3>
+        <p>23 April 2026</p>
+    </div>
+</div>
+
+<div class="form-section">
+    <h2>📝 Form Pendaftaran Event</h2>
+    <form onsubmit="daftar(event)">
+        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <select id="event">
+            <option>Bedah Buku & Meet Author</option>
+            <option>Talkshow Inspiratif</option>
+            <option>Lomba Membaca Anak</option>
+        </select>
+        <button type="submit">Daftar Sekarang</button>
+    </form>
+</div>
+
+</div>
+
+<footer>
+    © 2026 Toko Buku Adinda Putri | Festival Literasi 2026
+</footer>
+
+<script>
+// CONFETTI
+window.onload = function() {
+    confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+};
+
+// COUNTDOWN
+var eventDate = new Date("April 15, 2026 14:00:00").getTime();
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = eventDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        "⏳ Menuju Event: " + days + " Hari " + hours + " Jam "
+        + minutes + " Menit " + seconds + " Detik ";
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EVENT TELAH DIMULAI!";
+    }
+}, 1000);
+
+// FORM
+function daftar(e) {
+    e.preventDefault();
+    alert("Terima kasih sudah mendaftar! 🎉");
+}
+</script>
+
+</body>
+</html>
+
+
+
