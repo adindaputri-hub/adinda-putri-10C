@@ -2,36 +2,276 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-
-scale=1.0">
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css" />
-</head>
-<body> 
-    <nav>
-        <a href="index.html">beranda</a>
-        <a href="produk.html">produk</a>
-        <a href="bedah-buku.html">bedah-buku</a>
-        <a href="testimoni.html">testimoni</a>
-        <a href="tampil-testimoni">testimoni-pembeli</a>
-        <a href="kontak.html">kontak</a>
-        <a href="event.html">event</a>
-    </nav>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usaha Buku Adinda Putri - Tema Ungu</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: orchid; /* background ungu lembut */
+    color: darkorchid; /* teks ungu gelap */
+}
+nav {
+    background-color: plum; /* ungu utama */
+    padding: 1em;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+nav a {
+    color: orchid;
+    text-decoration: none;
+    margin: 0 1em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover { color: darkorchid; }
 
-<h1>Selamat Datang di Usaha Buku Adinda Putri</h1>
-<p>Website ini berisi informasi tentang produk buku, bedah
-buku, dan testimoni pelanggan.</p>
-<h2>Berbagai buku yang dijual</h2>
-<P>Toko kami menjual bermacam-macam buku untuk semua kalangan dengan kualitas terbaik dan harga terjangkau. Berikut daftar buku-bukunya:</P>
-<ul>
-<li><strong>Buku pelajaran umum sekolah:</strong>Matematika,Kimia,Fisika,IPS,IPA,B.Indonesia,B.Inggris, Grammar,dll</li>
-<li><strong>Buku novel:</strong>Novel islami dan umum tentang Aksi,Cinta,Horor,Sedih,dll</li>
-<li><strong>Buku motivasi:</strong>Terbitan para motivator-motivator berpengaruh</li>
-<li><strong>Buku anak-anak:</strong>Cerita rakyat,Dongeng-dongeng,dan Kisah-kisah lainnya</li>
-<li><strong>Buku pengetahuan umum:</strong>Ensiklopedia,KBBI,Kamus inggris,Buku periapan kenaikan jenjang,dll </li>
-<li><strong>Buku komik:</strong>Islami,Aksi,Cinta,dll</li>
-</ul>
+header {
+    text-align: center;
+    padding: 2em 1em;
+    background-color: mediumorchid;
+}
+header h1 {
+    font-family: 'Merriweather', serif;
+    color: plum;
+    font-size: 2.5em;
+}
+header p { font-size: 1.2em; color: darkorchid }
+.btn {
+    background-color: purple;
+    color: orchid;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover { background-color: purple; }
+
+/* Accordion */
+.accordion {
+    background-color: plum;
+    color: #2e003e;
+    cursor: pointer;
+    padding: 1em;
+    width: 90%;
+    margin: 1em auto;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    outline: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.accordion:hover { background-color: plum; }
+.accordion.active { background-color: darkorchid; }
+.panel {
+    padding: 1em;
+    display: none;
+    background-color: rebeccapurple;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.slider-track {
+    display: flex;
+    gap: 1em;
+    transition: transform 0.5s ease;
+}
+.slider-track img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.slider-track img:hover { transform: scale(1.05); }
+
+/* Arrow Buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rebeccapurple; /* ungu semi transparan */
+    border: none;
+    color: mediumorchid;
+    font-size: 2em;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 5;
+}
+.arrow:hover { background-color: orchid; }
+.arrow-left { left: 10px; }
+.arrow-right { right: 10px; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: plum;
+    color: darkorchid;
+    margin-top: 2em;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="bedah-buku.html">Bedah Buku</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="event.html">Event</a>
+</nav>
+
+<header>
+    <h1>Selamat Datang di Usaha Buku Adinda Putri</h1>
+    <p>Temukan berbagai buku berkualitas untuk semua kalangan dengan harga terjangkau.</p>
+    <a href="produk.html" class="btn">Lihat Koleksi Lengkap</a>
+</header>
+
+<!-- Semua kategori dengan accordion + slider -->
+
+<!-- Buku Pelajaran -->
+<button class="accordion">Buku Pelajaran Umum</button>
+<div class="panel">
+    <div class="slider-container">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="slider-track">
+            <img src="img/matematika.jpg" alt="Matematika">
+            <img src="img/kimia.jpg" alt="Kimia">
+            <img src="img/fisika.jpg" alt="Fisika">
+            <img src="img/ips.jpg" alt="IPS">
+            <img src="img/b_indonesia.jpg" alt="Bahasa Indonesia">
+            <img src="img/b_inggris.jpg" alt="Bahasa Inggris">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+    </div>
+</div>
+
+<!-- Buku Novel -->
+<button class="accordion">Buku Novel</button>
+<div class="panel">
+    <div class="slider-container">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="slider-track">
+            <img src="img/novel_islami.jpg" alt="Novel Islami">
+            <img src="img/novel_umum.jpg" alt="Novel Umum">
+            <img src="img/novel_aksi.jpg" alt="Novel Aksi">
+            <img src="img/novel_cinta.jpg" alt="Novel Cinta">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+    </div>
+</div>
+
+<!-- Buku Motivasi -->
+<button class="accordion">Buku Motivasi</button>
+<div class="panel">
+    <div class="slider-container">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="slider-track">
+            <img src="img/motivasi.jpg" alt="Buku Motivasi">
+            <img src="img/motivasi2.jpg" alt="Motivasi Lainnya">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+    </div>
+</div>
+
+<!-- Buku Anak-Anak -->
+<button class="accordion">Buku Anak-Anak</button>
+<div class="panel">
+    <div class="slider-container">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="slider-track">
+            <img src="img/cerita_rakyat.jpg" alt="Cerita Rakyat">
+            <img src="img/dongeng.jpg" alt="Dongeng">
+            <img src="img/kisah_lain.jpg" alt="Kisah Lainnya">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+    </div>
+</div>
+
+<!-- Buku Pengetahuan Umum -->
+<button class="accordion">Buku Pengetahuan Umum</button>
+<div class="panel">
+    <div class="slider-container">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="slider-track">
+            <img src="img/ensiklopedia.jpg" alt="Ensiklopedia">
+            <img src="img/kbbi.jpg" alt="KBBI">
+            <img src="img/kamus_inggris.jpg" alt="Kamus Inggris">
+            <img src="img/kenaikan_jenjang.jpg" alt="Persiapan Kenaikan">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+    </div>
+</div>
+
+<!-- Buku Komik -->
+<button class="accordion">Buku Komik</button>
+<div class="panel">
+    <div class="slider-container">
+        <button class="arrow arrow-left">&#10094;</button>
+        <div class="slider-track">
+            <img src="img/komik_islami.jpg" alt="Komik Islami">
+            <img src="img/komik_aksi.jpg" alt="Komik Aksi">
+            <img src="img/komik_cinta.jpg" alt="Komik Cinta">
+        </div>
+        <button class="arrow arrow-right">&#10095;</button>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Usaha Buku Adinda Putri. Semua hak dilindungi.
+</footer>
+
+<script>
+// Accordion
+document.querySelectorAll('.accordion').forEach(acc => {
+    acc.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+// Slider Auto + Manual
+document.querySelectorAll('.slider-container').forEach(container => {
+    const track = container.querySelector('.slider-track');
+    const btnLeft = container.querySelector('.arrow-left');
+    const btnRight = container.querySelector('.arrow-right');
+    let scrollAmount = 0;
+    const slideWidth = 220;
+    const maxScroll = track.scrollWidth - container.offsetWidth;
+
+    btnLeft.addEventListener('click', () => {
+        scrollAmount -= slideWidth;
+        if(scrollAmount < 0) scrollAmount = 0;
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+    btnRight.addEventListener('click', () => {
+        scrollAmount += slideWidth;
+        if(scrollAmount > maxScroll) scrollAmount = maxScroll;
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+
+    setInterval(() => {
+        scrollAmount += slideWidth;
+        if(scrollAmount > maxScroll) scrollAmount = 0;
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+    }, 3000);
+});
+</script>
+
 </body>
 </html>
-
-
