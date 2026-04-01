@@ -2,28 +2,25 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-
-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profil Usaha Buku</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <img src="img form.jpg" width="1312" height="300">
-    </header>
+    
      <nav>
         <a href="index.html">beranda</a>
         <a href="produk.html">produk</a>
-        <a href="bedah-buku.html">bedah-buku</a>
+        <a href="bedah-buku.html">bedah buku</a>
         <a href="testimoni.html">testimoni</a>
-        <a href="tampil-testimoni.html">testimoni-pembeli</a>
+        <a href="tampil-testimoni.html">testimoni pembeli</a>
         <a href="kontak.html">kontak</a>
         <a href="event.html">event</a>
     </nav>
 
 <h1>Toko Buku Adinda Putri</h1>
 <main class="formulir">
-<h2> Ketikkan Testimoni Anda</h2>
+<h2>Ketikkan Testimoni Anda</h2>
 <form id="formTestimoni">
 <label for="nama">Nama:</label>
 <input type="text" id="nama" name="nama" required placeholder="Nama Lengkap">
@@ -63,10 +60,11 @@ scale=1.0">
 
         // Ambil List dari localStorage
         const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+
          // Tambahkan testioni baru
          testimoniList.push(dataBaru);
 
-         // Simpan kembali kelocalStorage
+         // Simpan kembali ke localStorage
         localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
 
         // Arahkan ke halaman konfirmasi
@@ -75,4 +73,3 @@ scale=1.0">
 </script>
 </body>
 </html>
-
