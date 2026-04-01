@@ -1,5 +1,6 @@
+
 body {
-    background-color: rgb(231, 142, 228);
+    background-color: orchid;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: darkorchid;
     margin: 20px;
@@ -25,8 +26,8 @@ p {
     }
 
 .produk {
-    background-color: plum ;
-    border: 1px solid white;
+    background-color: plum;
+    border: 1px solid plum;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -105,7 +106,7 @@ p {
     max-width: 600px;
     margin: auto;
     padding: 20px;
-    background-color: orchid;
+    background-color: plum;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
 }
@@ -136,7 +137,6 @@ form button {
 
 form button:hover {
     background-color: orchid;
-
 }
 .owner-message h2 {
     background: linear-gradient(135deg, #8e44ad, #6a0dad, #c77dff);
@@ -147,4 +147,268 @@ form button:hover {
                  0 0 20px rgba(142, 68, 173, 0.4);
     animation: glowPulse 2s infinite alternate;
 }
+/* Animasi fade-in saat halaman dibuka */
+body {
+    animation: fadeIn 1s ease-in;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animasi muncul produk (smooth naik) */
+.produk {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: muncul 0.8s ease forwards;
+}
+
+/* Delay tiap produk biar efek berurutan */
+.produk:nth-child(1) { animation-delay: 0.2s; }
+.produk:nth-child(2) { animation-delay: 0.4s; }
+.produk:nth-child(3) { animation-delay: 0.6s; }
+.produk:nth-child(4) { animation-delay: 0.8s; }
+.produk:nth-child(5) { animation-delay: 1s; }
+
+@keyframes muncul {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover lebih smooth dan elegan */
+.produk {
+    transition: all 0.3s ease;
+}
+
+.produk:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* Animasi gambar (zoom halus) */
+.produk img {
+    transition: transform 0.4s ease;
+}
+
+.produk:hover img {
+    transform: scale(1.05);
+}
+
+/* Animasi tombol */
+.produk button {
+    transition: all 0.3s ease;
+}
+
+.produk button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Efek navbar */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+/* Glow halus di card */
+.produk {
+    position: relative;
+    overflow: hidden;
+}
+
+.produk::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.6s;
+}
+
+.produk:hover::before {
+    left: 100%;
+}
+
+/* Badge (NEW / HOT) */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(45deg, #ff00cc, #8000ff);
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Efek klik tombol */
+.produk button:active {
+    transform: scale(0.95);
+}
+
+/* Animasi judul */
+h1 {
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    from {
+        text-shadow: 0 0 5px rgba(142, 68, 173, 0.3);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(142, 68, 173, 0.7);
+    }
+}
+
+/* Efek hover navbar */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ffd700;
+    left: 0;
+    bottom: -3px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Scroll halus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sedikit animasi halaman saat discroll (simple feel) */
+section {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Header toko */
+.header-toko {
+    text-align: center;
+    padding: 20px;
+}
+
+.header-toko h1 {
+    margin-bottom: 10px;
+    color: #6a0dad;
+}
+
+/* Search box */
+.search-box {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 10px rgba(142, 68, 173, 0.3);
+}
+
+/* Card produk upgrade */
+.produk {
+    position: relative;
+    background: #c77dff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Hover ala e-commerce */
+.produk:hover {
+    transform: translateY(-8px);
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #8e44ad;
+    color: #c77dff;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* Harga lebih menonjol */
+.harga {
+    font-size: 18px;
+    color: #6a0dad;
+}
+
+/* Tombol keranjang */
+.produk button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #8e44ad, #6a0dad);
+    color: #8e44ad;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.produk button:hover {
+    background: linear-gradient(90deg, #6a0dad, #4b0082);
+}
+
+/* Efek klik */
+.produk button:active {
+    transform: scale(0.95);
+}
+
+/* Grid lebih rapih */
+.daftar-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
